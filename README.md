@@ -2,7 +2,7 @@
 
 A system that ingests, processes, and analyzes time-series readings from consumer health devices (blood pressure monitors, pulse oximeters, smart scales, heart rate trackers) to generate clinician-facing alerts for adults aged 65+.
 
-Built as a take-home exercise for xHealth Group — Project A.
+Built as a take-home exercise for Project A.
 
 ## Quick Start
 
@@ -14,7 +14,7 @@ pip install -r requirements.txt
 python main.py
 ```
 
-That's it. The pipeline generates synthetic data, processes it, runs clinical analysis, and outputs alerts to the `output/` directory.
+ The pipeline generates synthetic data, processes it, runs clinical analysis, and outputs alerts to the `output/` directory.
 
 ## What It Does
 
