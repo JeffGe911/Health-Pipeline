@@ -1,6 +1,6 @@
 # Health Pipeline
 
-End-to-end monitoring pipeline for consumer health device data. Ingests time-series readings from blood pressure monitors, pulse oximeters, smart scales, and heart rate trackers, detects clinical concerns, and generates alerts for clinician review. Designed for adults 65+.
+This is an End-to-end monitoring pipeline for consumer health device data. It ingests time-series readings from blood pressure monitors, pulse oximeters, smart scales, and heart rate trackers, detects clinical concerns, and generates alerts for clinician review. Designed for adults 65+.
 
 ## Quick Start
 
