@@ -9,7 +9,7 @@ pip install -r requirements.txt
 python main.py
 ```
 
-Sample outputs are in `output/` if you want to inspect results without running it.
+Sample outputs are in `outputfiles` if you want to inspect results without running it.
 
 ## Problems it solves
 
