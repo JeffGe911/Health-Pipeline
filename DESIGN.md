@@ -6,7 +6,7 @@
 
 ## Problem Statement
 
-My thoughts start from looking at adults who are aged 65 and older often use consumer health devices at home: blood pressure monitors, pulse oximeters, smart scales, wearable heart rate trackers — but the data from these devices usually lives in disconnected silos. A clinician reviewing a patient's status before a visit has no unified view, no trend detection, and no early warning when something is going wrong between appointments.
+I first look at the target population in the business: Adults aged 65 and older often use consumer health devices at home: blood pressure monitors, pulse oximeters, smart scales, wearable heart rate trackers — but the data from these devices usually lives in disconnected silos.
 
 This system ingests time-series data from multiple consumer health devices, processes it into a clean and queryable format, runs clinical analysis to detect concerning patterns, and generates structured alerts for clinician review. The goal is to catch deterioration early — before it becomes an ER visit.
 
