@@ -30,16 +30,6 @@ The system runs a five-stage pipeline end to end:
 
 **Stage 5 — Alert Generation.** Prioritizes and deduplicates alerts, then outputs a structured JSON file and a clinician-readable text summary.
 
-## Output Files
-
-After running `python main.py`, you'll find these in `output/`:
-
-| File | Description |
-|------|-------------|
-| `health_monitoring.db` | SQLite database with all patients, devices, and readings |
-| `alerts.json` | Structured alerts (machine-readable) |
-| `alert_summary.txt` | Clinician-readable summary grouped by patient and severity |
-
 ## Project Structure
 
 ```
