@@ -35,7 +35,6 @@ Design rationale, assumptions, and tradeoffs are in [DESIGN.md](DESIGN.md).
 
 ```
 ├── main.py                           # Entry point
-├── health_monitor/
 │   ├── config.py                     # Thresholds, parameters
 │   ├── models.py                     # Patient, Device, Reading + DB ops
 │   ├── data_generator.py             # Synthetic data with edge cases
@@ -43,7 +42,6 @@ Design rationale, assumptions, and tradeoffs are in [DESIGN.md](DESIGN.md).
 │   ├── processing.py                 # Cleaning, aggregation, rolling stats
 │   ├── analyzer.py                   # Three-layer analysis
 │   └── alert_engine.py               # Prioritization and output
-├── output/                           # Sample + generated outputs
 ├── DESIGN.md                         # Assumptions, tradeoffs, decisions
 └── requirements.txt
 ```
