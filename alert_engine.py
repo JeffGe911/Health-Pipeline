@@ -4,10 +4,6 @@ alert_engine.py — Clinician-facing alert generation and output.
 Takes raw alerts from the analyzer and produces:
   1. A structured JSON file (machine-readable, for downstream systems)
   2. A readable text summary grouped by patient and severity
-
-Design choice: we output structured data, not a dashboard.
-A dashboard is a presentation layer concern. The value of this system
-is in the detection logic and data quality, not the UI.
 In production, this output would feed into an EHR alert queue,
 a Slack channel, or a clinician portal.
 """
