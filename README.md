@@ -13,34 +13,42 @@ Sample outputs are in `outputfiles` if you want to inspect results without runni
 
 ## Problems it solves
 
-Generates synthetic patient data (20 patients × 4 devices × 30 days, ~100K readings) with realistic edge cases — sensor faults, Bluetooth duplicates, time gaps, calibration drift — and runs it through a 5-stage pipeline:
+Sample outputs are included in output/ so the results can be reviewed without running the pipeline first.
 
-1. **Data generation** — synthetic patients with different clinical profiles
-2. **Ingestion** — validate, tag faults, deduplicate, store to SQLite
-3. **Processing** — daily aggregation, gap detection, rolling statistics
-4. **Analysis** — three detection layers: threshold checks → trend detection → cross-device correlation
-5. **Alerts** — prioritize, deduplicate, output JSON + clinician summary
+What it does
 
-Design rationale, assumptions, and tradeoffs are in [DESIGN.md](DESIGN.md).
+The pipeline generates synthetic patient data for 20 patients across 4 device types over 30 days, which comes out to about 100K readings. The data also includes edge cases such as sensor faults, Bluetooth duplicates, time gaps, and calibration drift.
 
-## Output
+It then runs the data through five stages:
 
-| `output/alerts.json` | Structured alerts (machine-readable) |
-| `output/alert_summary.txt` | Clinician summary by patient and severity |
-| `output/health_monitoring.db` | SQLite with all patients, devices, readings |
+Data generation — creates patients with different clinical profiles and device readings
+Ingestion — validates readings, tags faults, removes duplicates, and stores data in SQLite
+Processing — computes daily aggregates, detects gaps, and builds rolling statistics
+Analysis — applies three layers of detection: threshold checks, trend detection, and cross-device correlation
+Alerts — prioritizes and deduplicates alerts, then outputs JSON and a clinician summary
 
-## Structure
-├── main.py                           # Entry point
-│   ├── config.py                     # Thresholds, parameters
-│   ├── models.py                     # Patient, Device, Reading + DB ops
-│   ├── data_generator.py             # Synthetic data with edge cases
-│   ├── ingestion.py                  # Validation, dedup, storage
-│   ├── processing.py                 # Cleaning, aggregation, rolling stats
-│   ├── analyzer.py                   # Three-layer analysis
-│   └── alert_engine.py               # Prioritization and output
-├── DESIGN.md                         # Assumptions, tradeoffs, decisions
+More detail on assumptions, design decisions, and tradeoffs is in DESIGN.md
+.
+
+Output
+File	Contents
+output/alerts.json	Structured alerts for downstream use
+output/alert_summary.txt	Clinician-readable summary by patient and severity
+output/health_monitoring.db	SQLite database with patients, devices, and readings
+Structure
+.
+├── main.py
+├── health_monitor/
+│   ├── config.py
+│   ├── models.py
+│   ├── data_generator.py
+│   ├── ingestion.py
+│   ├── processing.py
+│   ├── analyzer.py
+│   └── alert_engine.py
+├── output/
+├── DESIGN.md
 └── requirements.txt
+Requirements
 
-## Requirements
-
-Python 3.9+, numpy, pandas.
+Python 3.9+ with numpy and pandas.
