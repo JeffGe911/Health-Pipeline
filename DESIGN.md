@@ -1,12 +1,12 @@
 # Design Note — Health Device Data Monitoring System
 
-> Since the scope is intentionally open-ended, I constrained V1 to a reliable end-to-end monitoring pipeline with explicit assumptions, realistic edge cases, and interpretable detection. I prioritized correctness and usability over complex modeling, and documented key tradeoffs and what I intentionally left out.
+> I constrained V1 to a reliable end-to-end monitoring pipeline with explicit assumptions, realistic edge cases, and interpretable detection. I prioritized correctness and usability over complex modeling, and documented key tradeoffs and what I intentionally left out.
 
 > *Disclaimer: This system is for exercise purposes only. It is not clinical decision support and all thresholds are illustrative. Always defer to qualified clinical judgment.*
 
 ## Problem Statement
 
-Adults aged 65 and older often use consumer health devices at home — blood pressure monitors, pulse oximeters, smart scales, wearable heart rate trackers — but the data from these devices usually lives in disconnected silos. A clinician reviewing a patient's status before a visit has no unified view, no trend detection, and no early warning when something is going wrong between appointments.
+My thoughts start from looking at adults who are aged 65 and older often use consumer health devices at home: blood pressure monitors, pulse oximeters, smart scales, wearable heart rate trackers — but the data from these devices usually lives in disconnected silos. A clinician reviewing a patient's status before a visit has no unified view, no trend detection, and no early warning when something is going wrong between appointments.
 
 This system ingests time-series data from multiple consumer health devices, processes it into a clean and queryable format, runs clinical analysis to detect concerning patterns, and generates structured alerts for clinician review. The goal is to catch deterioration early — before it becomes an ER visit.
 
