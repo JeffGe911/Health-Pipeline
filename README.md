@@ -30,8 +30,6 @@ Design rationale, assumptions, and tradeoffs are in [DESIGN.md](DESIGN.md).
 | `output/health_monitoring.db` | SQLite with all patients, devices, readings |
 
 ## Structure
-``
-
 ├── main.py                           # Entry point
 │   ├── config.py                     # Thresholds, parameters
 │   ├── models.py                     # Patient, Device, Reading + DB ops
@@ -42,7 +40,6 @@ Design rationale, assumptions, and tradeoffs are in [DESIGN.md](DESIGN.md).
 │   └── alert_engine.py               # Prioritization and output
 ├── DESIGN.md                         # Assumptions, tradeoffs, decisions
 └── requirements.txt
-```
 
 ## Requirements
 
