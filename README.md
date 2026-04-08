@@ -11,7 +11,7 @@ python main.py
 
 Sample outputs are in `output/` if you want to inspect results without running it.
 
-## What it does
+## Problems it solves
 
 Generates synthetic patient data (20 patients × 4 devices × 30 days, ~100K readings) with realistic edge cases — sensor faults, Bluetooth duplicates, time gaps, calibration drift — and runs it through a 5-stage pipeline:
 
@@ -25,15 +25,12 @@ Design rationale, assumptions, and tradeoffs are in [DESIGN.md](DESIGN.md).
 
 ## Output
 
-| File | Contents |
-|------|----------|
 | `output/alerts.json` | Structured alerts (machine-readable) |
 | `output/alert_summary.txt` | Clinician summary by patient and severity |
 | `output/health_monitoring.db` | SQLite with all patients, devices, readings |
 
 ## Structure
 
-```
 ├── main.py                           # Entry point
 │   ├── config.py                     # Thresholds, parameters
 │   ├── models.py                     # Patient, Device, Reading + DB ops
